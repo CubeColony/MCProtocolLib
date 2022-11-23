@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.steveice10</groupId>
+    <groupId>com.cubecolony</groupId>
     <artifactId>mcprotocollib</artifactId>
-    <version>1.19.1-SNAPSHOT</version>
+    <version>1.19.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>MCProtocolLib</name>
