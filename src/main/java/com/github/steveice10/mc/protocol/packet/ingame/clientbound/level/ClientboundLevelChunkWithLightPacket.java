@@ -31,7 +31,8 @@ public class ClientboundLevelChunkWithLightPacket implements MinecraftPacket {
         this.heightMaps = helper.readTag(in);
         this.chunkData = helper.readByteArray(in);
 
-        this.blockEntities = new BlockEntityInfo[helper.readVarInt(in)];
+        int blockEntityCount = helper.readVarInt(in);
+        this.blockEntities = new BlockEntityInfo[blockEntityCount];
         for (int i = 0; i < this.blockEntities.length; i++) {
             byte xz = in.readByte();
             int blockEntityX = (xz >> 4) & 15;
@@ -41,7 +42,6 @@ public class ClientboundLevelChunkWithLightPacket implements MinecraftPacket {
             CompoundTag tag = helper.readTag(in);
             this.blockEntities[i] = new BlockEntityInfo(blockEntityX, blockEntityY, blockEntityZ, type, tag);
         }
-
         this.lightData = helper.readLightUpdateData(in);
     }
 
